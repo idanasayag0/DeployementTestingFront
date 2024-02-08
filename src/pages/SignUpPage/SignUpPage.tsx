@@ -122,7 +122,7 @@ const Signup = () => {
 
       await new Promise((resolve) => setTimeout(resolve, 500));
       setIsLoading(false);
-      navigate("/");
+      navigate(0);
     }
   };
 
