@@ -9,6 +9,7 @@ import axios from "axios";
 import { usePost } from "../../hooks/usePost";
 import { AUTH, SERVER_URL } from "../../constants";
 import { Box, Button as MuiButton, Typography } from "@mui/material";
+import { useNavigate } from "react-router";
 const { Dragger } = Upload;
 
 const VisuallyHiddenInput = styled("input")({
@@ -40,6 +41,7 @@ const Signup = () => {
   });
   const [fileName, setFileName] = React.useState<File | null>();
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   const onSubmit = async () => {
     const requiredFields = [
       "email",
@@ -120,7 +122,7 @@ const Signup = () => {
 
       await new Promise((resolve) => setTimeout(resolve, 500));
       setIsLoading(false);
-      window.location.href = "http://localhost:3000";
+      navigate("/");
     }
   };
 
