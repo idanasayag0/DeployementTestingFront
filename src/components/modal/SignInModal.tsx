@@ -113,7 +113,7 @@ export default function SignInModal({
       .catch((err) => {});
 
     setTimeout(() => {
-      navigate(0);
+      window.location.href = "https://deployement-testing-front.vercel.app/";
     }, 300);
   };
   const onFailure = (response) => {
